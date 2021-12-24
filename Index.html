@@ -18,7 +18,7 @@ Opensea">
 <link href="favicon.png" rel="icon" sizes="350x350" type="image/png">
 <link href="favicon.png" rel="apple-touch-icon" sizes="350x350">
 <link href="css/font-awesome.min.css" rel="stylesheet">
-<link href="css/MyProject7.css" rel="stylesheet">
+<link href="css/MyProjectDer.css" rel="stylesheet">
 <link href="css/Index.css" rel="stylesheet">
 <script src="js/jquery-1.12.4.min.js"></script>
 <script src="js/skrollr.min.js"></script>
@@ -155,22 +155,32 @@ $(document).ready(function()
    {
       onScrollLogo320();
    });
+   $("a[href*='#MintLayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_MintLayoutGrid').offset().top-90 }, 600, 'easeOutCubic');
+   });
+   $("a[href*='#GalleryLayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_GalleryLayoutGrid').offset().top-90 }, 600, 'easeOutCubic');
+   });
 });
 </script>
 </head>
 <body>
+<div id="container">
+</div>
 <div id="wb_logoLayoutGrid" class="h1" data-top="opacity:1;" data--150-top="opacity:0;">
 <div id="logoLayoutGrid">
 <div class="row">
 <div class="col-1">
 <div id="wb_Logo">
-<img src="images/Logo.webp" id="Logo" alt="" width="1066" height="128">
+<img src="images/Test.webp" id="Logo" alt="" width="1066" height="128">
 </div>
 <div id="wb_Logo320">
 <img src="images/Logo320.webp" id="Logo320" alt="" width="1068" height="336">
 </div>
-</div>
-<div class="col-2">
 </div>
 </div>
 </div>
@@ -192,19 +202,22 @@ $(document).ready(function()
 <div class="headerMenu-navbar-collapse collapse">
 <ul class="nav navbar-nav">
 <li class="nav-item">
-<a href="#logoLayoutGrid" class="nav-link"><i class="home"></i>HOME</a>
+<a href="#logoLayoutGrid" title="HOME" class="nav-link"><i class="home"></i>HOME</a>
 </li>
 <li class="nav-item">
-<a href="#aboutLayoutGrid" class="nav-link"><i class="description"></i>ABOUT</a>
+<a href="#aboutLayoutGrid" title="ABOUT" class="nav-link"><i class="description"></i>ABOUT</a>
 </li>
 <li class="nav-item">
-<a href="#timelineLayoutGrid1" class="nav-link"><i class="map"></i>ROADMAP</a>
+<a href="#timelineLayoutGrid1" title="ROADMAP" class="nav-link"><i class="map"></i>ROADMAP</a>
 </li>
 <li class="nav-item">
-<a href="#faqLayoutGrid" class="nav-link"><i class="rule"></i>FAQ</a>
+<a href="#faqLayoutGrid" title="FAQ" class="nav-link"><i class="rule"></i>FAQ</a>
 </li>
 <li class="nav-item">
-<a href="#LayoutGrid2" class="nav-link"><i class="build"></i>MINT</a>
+<a href="#MintLayoutGrid" title="MINT NOW" class="nav-link"><i class="build"></i>MINT</a>
+</li>
+<li class="nav-item">
+<a href="#GalleryLayoutGrid" title="GALLERY" class="nav-link">GALLERY</a>
 </li>
 </ul>
 </div>
@@ -212,21 +225,18 @@ $(document).ready(function()
 </div>
 </div>
 <div id="wb_TextMenu1">
-<span>[<a href="#logoLayoutGrid">HOME</a>]</span><span>[<a href="#aboutLayoutGrid">ABOUT</a>]</span><span>[<a href="#timelineLayoutGrid1">ROADMAP</a>]</span><span>[<a href="#faqLayoutGrid">FAQ</a>]</span><span>[<a href="#FlexContainer2">MINT</a>]</span>
+<span>[<a href="#logoLayoutGrid">HOME</a>]</span><span>[<a href="#aboutLayoutGrid">ABOUT</a>]</span><span>[<a href="#timelineLayoutGrid1">ROADMAP</a>]</span><span>[<a href="#faqLayoutGrid">FAQ</a>]</span><span>[<a href="#MintLayoutGrid">MINT</a>]</span><span>[<a href="#GalleryLayoutGrid" title="GALLERY">GALLERY</a>]</span>
 </div>
 </div>
 <div class="col-2">
-<div id="wb_IconFont320">
-<a href="https://twitter.com/PunksInu" rel="noreferrer" target="_blank" title="Twitter"><div id="IconFont320"><i class="IconFont320"></i></div></a>
+<div id="wb_IconFont8">
+<a href="https://opensea.io/collection/dogeinupunks" rel="noreferrer" target="_blank" title="Opensea"><div id="IconFont8"><i class="IconFont8"></i></div></a>
 </div>
 <div id="wb_IconFont1">
-<a href="https://opensea.io/collection/dogeinupunks" target="_blank" title="Opensea"><svg id="IconFont1" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-   <path d="M494 34 L531 34 C664 34, 784 94, 890 215 C957 307, 991 400, 991 494 L991 531 C991 664, 930 784, 810 890 C718 957, 625 991, 531 991 L494 991 C360 991, 240 931, 135 810 C67 718, 34 625, 34 531 L34 494 C34 361, 94 241, 215 135 C306 68, 400 34, 494 34 Z M501 193 L501 221 L498 226 C455 214, 431 208, 426 208 C465 288, 485 351, 485 396 L485 399 C485 431, 465 475, 426 532 C426 535, 428 537, 432 537 L493 537 C496 538, 497 539, 498 542 L498 585 C497 588, 496 590, 493 590 L432 590 C398 584, 381 568, 381 542 L381 532 L234 532 L234 548 C234 607, 267 653, 333 686 C353 695, 376 699, 402 699 L647 699 C680 699, 715 664, 753 595 C765 577, 790 556, 825 537 L825 508 L822 502 C714 531, 660 549, 660 556 C642 579, 625 590, 610 590 L559 590 C555 590, 554 588, 554 585 L554 542 C554 539, 556 537, 559 537 L596 537 C649 487, 676 446, 676 415 L676 402 C676 361, 635 306, 554 237 L554 194 C550 177, 541 168, 527 168 L525 168 C508 170, 500 178, 501 193 Z M270 479 L400 479 C416 461, 427 436, 434 404 L434 386 C434 352, 422 314, 400 271 C390 280, 346 347, 270 473"/>
-</svg>
-</a>
+<a href="https://twitter.com/PunksInu" rel="noreferrer" target="_blank" title="Twitter"><div id="IconFont1"><i class="IconFont1"></i></div></a>
 </div>
-<div id="wb_IconFont8">
-<a href="https://discord.com/" rel="noreferrer" target="_blank" title="Discord Coming Soon"><div id="IconFont8"><i class="IconFont8"></i></div></a>
+<div id="wb_IconFont9">
+<a href="https://www.discord.com" rel="noreferrer" target="_blank" title="Coming Soon"><div id="IconFont9"><i class="IconFont9"></i></div></a>
 </div>
 </div>
 </div>
@@ -308,7 +318,7 @@ $(document).ready(function()
 <div id="timelineCard1">
 <div class="arrow"></div>
    <div id="timelineCard1-card-body">
-      <div id="timelineCard1-card-item0">DogeInuPunks is live and Public sale is launch<br><br>First 1000 are Free (This represents 50th in giveaway with 0.05ETH as the starting price). After the price is fixed to 0.05 ETH for the remaining 9000. <br><br>(This represents 10eth in Giveaways)</div>
+      <div id="timelineCard1-card-item0">DogeInuPunks is live and Public sale is launch<br><br>First 1000 are Free. After the price is fixed to 0.05ETH for the remaining 9000.<br><br>(This represents some ETHs in giveaway with 0.05ETH as the starting price)</div>
    </div></div>
 
 </div>
@@ -349,7 +359,7 @@ $(document).ready(function()
 <div id="timelineCard2">
 <div class="arrow"></div>
    <div id="timelineCard2-card-body">
-      <div id="timelineCard2-card-item0">Developping community trought Discord channel and others Mediums. <br>Numerous Giveaways for the community after 25% minting and the possibility to win Ethereums after the collection sold out.<br>According to the new traits added, the rarity classification will also be revealed. </div>
+      <div id="timelineCard2-card-item0">Developping community trought Discord channel and other Media. <br>Numerous Giveaways for the community after 25% minting and the possibility to win Ethereums after the collection sold out.<br>According to the new traits added, the rarity classification will also be revealed. </div>
    </div></div>
 
 </div>
@@ -458,7 +468,7 @@ $(document).ready(function()
 <div id="Card2">
 <div class="arrow"></div>
    <div id="Card2-card-body">
-      <div id="Card2-card-item0">DogeInuPunks is live and Public sale is launch<br><br>First 1000 are Free (This represents 50th in giveaway with 0.05ETH as the starting price). After the price is fixed to 0.05 ETH for the remaining 9000. <br><br>(This represents 10eth in Giveaways)</div>
+      <div id="Card2-card-item0">DogeInuPunks is live and Public sale is launch<br><br>First 1000 are Free. After the price is fixed to 0.05 ETH for the remaining 9000. <br><br>(This represents 50th in giveaway with 0.05ETH as the starting price).</div>
    </div></div>
 
 </div>
@@ -479,7 +489,7 @@ $(document).ready(function()
 <div id="Card3">
 <div class="arrow"></div>
    <div id="Card3-card-body">
-      <div id="Card3-card-item0">Developping community trought Discord channel and others Mediums.<br>Numerous Giveaways for the community after 25% minting and the possibility to win Ethereums after the collection sold out.</div>
+      <div id="Card3-card-item0">Developping community trought Discord channel and others Mediums.<br>Numerous Giveaways for the community after 25% minting and the possibility to win Ethereums after the collection sold out.<br>According to the new traits added, the rarity classification will also be revealed.</div>
    </div></div>
 
 </div>
@@ -528,7 +538,7 @@ $(document).ready(function()
 <div id="Card5">
 <div class="arrow"></div>
    <div id="Card5-card-body">
-      <div id="Card5-card-item0">Lots of ideas to develop to unite the community over time and consider associations with other similar projects to make the world of cryptos and digital art known.</div>
+      <div id="Card5-card-item0">Will be announced upon completion of the minting process, including a community voted charitable donation and exclusive whitelisting of our future collections.</div>
    </div></div>
 
 </div>
@@ -619,93 +629,118 @@ $(document).ready(function()
    <div id="faqCard5-card-body">
       <div id="faqCard5-card-item0"><i class="looks-5"></i></div>
       <div id="faqCard5-card-item1">How to mint ?</div>
-      <div id="faqCard5-card-item2">First, make sure you have enough $ ETH in your wallet and that your wallet is on the correct mainnet (Ethereum's mainnet).<br>By simply clicking the Mint button, you will be redirected to the minting page and pressing "connect to metamask" to log into your Metamask wallet, select the amount and click the buy button. If Metamask is installed correctly, a pop-up window will open and you just need to confirm the transaction. You can adjust the gas limit according to the network situation but it is not recommended to significantly lower the gas limit to avoid a transaction error.<br>After the mint is finished, you can directly view your NFT in Opensea at<br>https://opensea.io/collection/dogeinupunks and put it up for sale if you wish in the second market.</div>
+      <div id="faqCard5-card-item2">First, make sure you have enough $ETH in your wallet and that your wallet is on the correct mainnet (Ethereum's mainnet).<br>By simply clicking the Mint button, you will be redirected to the minting page and pressing "connect to metamask" to log into your Metamask wallet, select the amount and click the buy button. If Metamask is installed correctly, a pop-up window will open and you just need to confirm the transaction. You can adjust the gas limit according to the network situation but it is not recommended to significantly lower the gas limit to avoid a transaction error.<br>After the mint is finished, you can directly view your NFT in Opensea at<br>https://opensea.io/collection/dogeinupunks and put it up for sale if you wish in the second market.</div>
    </div>
 </div>
 <div id="wb_Card1" class="card">
    <div id="Card1-card-body">
       <div id="Card1-card-item0"><i class="looks-6"></i></div>
       <div id="Card1-card-item1">What's different about others crypto punks projects</div>
-      <div id="Card1-card-item2">DogeInuPunks has been redesigning from scratch and new traits have been added that don't exist in the original. Along with similar punks types (Alien, Male, Female, etc ...), we've added new attributes like new backgrounds, pins, and outfits. In total there are 140+ attributes<br>Now the punk-style dogs are cuter and funnier. Rarity traits revealed after the mint sold out.</div>
+      <div id="Card1-card-item2">DogeInu Punks has been redesigning from scratch and new traits have been added that don't exist in the original. Along with similar punk types (Alien, Male, Female, etc ...), we've added new attributes like new backgrounds, pins, and outfits. In total there are 140+ attributes<br>Now the punk-style dogs are cuter and funnier. Rarity traits will be revealed after the mint sold out.</div>
    </div>
 </div>
 </div>
 </div>
 </div>
-<div id="wb_LayoutGrid2">
-<div id="LayoutGrid2">
+<div id="wb_MintLayoutGrid">
+<div id="MintLayoutGrid">
 <div class="row">
 <div class="col-1">
+<div id="wb_MintHeading">
+<h2 id="MintHeading"></h2>
 </div>
-<div class="col-2">
 </div>
-<div class="col-3">
+</div>
+</div>
+</div>
+<div id="MintFlexContainer">
+<input type="button" id="MintButton" onclick="window.location.href='https://mint.dogeinupunks.io';return false;" name="MINT NOW" value="MINT NOW">
+</div>
+<div id="wb_GalleryLayoutGrid">
+<div id="GalleryLayoutGrid">
+<div class="row">
+<div class="col-1">
+<div id="wb_GalleryHeading">
+<h2 id="GalleryHeading"></h2>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="FlexContainer1">
-</div>
-<div id="FlexContainer2">
-<input type="submit" id="Mint" onclick="window.location.href='https://www.mint.dogeinupunks.io';return false;" name="" value="Mint Now">
-</div>
-<div id="FlexContainer3">
-</div>
-<div id="FlexContainer4">
 <div id="wb_PhotoGallery1">
 <div id="PhotoGallery1">
    <div class="thumbnails">
       <div class="thumbnail">
-         <a href="images/1.webp"><img alt="" src="images/tn_1.webp" class="image" width="100" height="108"></a>
+         <a href="images/8111.webp"><img alt="" src="images/tn_8111.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
       </div>
       <div class="thumbnail">
-         <a href="images/2.webp"><img alt="" src="images/tn_2.webp" class="image" width="100" height="108"></a>
+         <a href="images/3364.webp"><img alt="" src="images/tn_3364.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
       </div>
       <div class="thumbnail">
-         <a href="images/3.webp"><img alt="" src="images/tn_3.webp" class="image" width="100" height="108"></a>
+         <a href="images/2160.webp"><img alt="" src="images/tn_2160.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
       </div>
       <div class="thumbnail">
-         <a href="images/4.webp"><img alt="" src="images/tn_4.webp" class="image" width="100" height="109"></a>
+         <a href="images/3429.webp"><img alt="" src="images/tn_3429.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
       </div>
       <div class="thumbnail">
-         <a href="images/5.webp"><img alt="" src="images/tn_5.webp" class="image" width="100" height="108"></a>
+         <a href="images/8092.webp"><img alt="" src="images/tn_8092.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
       </div>
       <div class="thumbnail">
-         <a href="images/6.webp"><img alt="" src="images/tn_6.webp" class="image" width="100" height="108"></a>
+         <a href="images/3430.webp"><img alt="" src="images/tn_3430.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
       </div>
       <div class="thumbnail">
-         <a href="images/7.webp"><img alt="" src="images/tn_7.webp" class="image" width="100" height="109"></a>
+         <a href="images/3529.webp"><img alt="" src="images/tn_3529.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
       </div>
       <div class="thumbnail">
-         <a href="images/8.webp"><img alt="" src="images/tn_8.webp" class="image" width="100" height="108"></a>
+         <a href="images/3435.webp"><img alt="" src="images/tn_3435.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
       </div>
       <div class="thumbnail">
-         <a href="images/9.webp"><img alt="" src="images/tn_9.webp" class="image" width="100" height="108"></a>
+         <a href="images/3436.webp"><img alt="" src="images/tn_3436.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
       </div>
       <div class="thumbnail">
-         <a href="images/10.webp"><img alt="" src="images/tn_10.webp" class="image" width="100" height="108"></a>
+         <a href="images/7739.webp"><img alt="" src="images/tn_7739.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
+      </div>
+      <div class="clearfix visible-col10"></div>
+      <div class="thumbnail">
+         <a href="images/8045.webp"><img alt="" src="images/tn_8045.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
+      </div>
+      <div class="thumbnail">
+         <a href="images/3444.webp"><img alt="" src="images/tn_3444.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
+      </div>
+      <div class="thumbnail">
+         <a href="images/3433.webp"><img alt="" src="images/tn_3433.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
+      </div>
+      <div class="thumbnail">
+         <a href="images/7747.webp"><img alt="" src="images/tn_7747.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
+      </div>
+      <div class="thumbnail">
+         <a href="images/6348.webp"><img alt="" src="images/tn_6348.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
+      </div>
+      <div class="thumbnail">
+         <a href="images/8128.webp"><img alt="" src="images/tn_8128.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
+      </div>
+      <div class="thumbnail">
+         <a href="images/8098.webp"><img alt="" src="images/tn_8098.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
+      </div>
+      <div class="thumbnail">
+         <a href="images/6647.webp"><img alt="" src="images/tn_6647.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
+      </div>
+      <div class="thumbnail">
+         <a href="images/1175.webp"><img alt="" src="images/tn_1175.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
+      </div>
+      <div class="thumbnail">
+         <a href="images/9997.webp"><img alt="" src="images/tn_9997.webp" loading="lazy" class="image" width="99" height="107"><div class="caption"><span class="title"></span></div></a>
       </div>
       <div class="clearfix visible-col10"></div>
    </div>
 </div>
 </div>
 </div>
-<div id="wb_LayoutGrid3">
-<div id="LayoutGrid3">
-<div class="row">
-<div class="col-1">
+<div id="FlexContainer2">
+<div id="wb_FooterText">
+<span style="color:#000000;font-family:'Kemco Pixel';font-size:13px;">&#0169; DogeInu Punks. All <strong>Rights </strong>Reserved.<br></span>
 </div>
-<div class="col-2">
-<div id="wb_footerText">
-<p style="font-family:Arial;line-height:16px;"><span style="font-family:Kemco Pixel;font-weight:bold;">© </span><span style="font-family:Kemco Pixel;font-weight:bold;">DogeInu Punks</span><span style="font-family:Kemco Pixel;font-weight:bold;">. All Rights Reserved.</span></p>
-</div>
-</div>
-<div class="col-3">
-</div>
-</div>
-</div>
-</div>
-<div id="FlexContainer5">
 </div>
 </body>
 </html>
